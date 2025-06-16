@@ -1,7 +1,7 @@
 .fullscreen-card {
   display: flex;
   justify-content: center;
-  height: 85%;
+  height: calc(100vh - 64px - 44px);
   background-color: #EAEFEF;
 }
 

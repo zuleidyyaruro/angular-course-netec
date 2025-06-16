@@ -1,1 +1,44 @@
-<p>dog-table works!</p>
+
+<mat-card class="fullscreen-card">
+    <mat-card-header>
+
+        <mat-card-title class="cardtitle">Perros</mat-card-title>
+        <button>
+            <mat-icon routerLink="/add">add</mat-icon>
+        </button>
+    </mat-card-header>
+    <div>
+
+    </div>
+
+    <mat-card-content class="cardbody">
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Raza</th>
+                    <th>Descripción</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                @for(dog of dogs(); track $index){
+                    <tr>
+                        <td>
+                            <img [src]="dog.urlImage" alt="dog" width="200">
+                        </td>
+                        <td>{{dog.breed}}</td>
+                        <td>{{dog.description}}</td>
+                        <td>
+                            <button>
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </mat-card-content>
+
+</mat-card>

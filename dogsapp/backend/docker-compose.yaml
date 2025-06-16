@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   mysqlserver:
     container_name: mysqlserver
@@ -7,22 +6,19 @@ services:
       - MYSQL_ROOT_PASSWORD=netec123
       - MYSQL_DATABASE=dogs
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-uroot", "-pnetec123", "-hlocalhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
+      test: mysqladmin ping -uroot -p${MYSQL_ROOT_PASSWORD} -hlocalhost
+  
   microdog:
     container_name: microdog
     image: edgardovefe/angulardev:microservicedog
     environment:
       - IP_DB=mysqlserver
       - PORT_DB=3306
+      - NAME_DB=dogs
       - USER_DB=root
       - PASSWORD_DB=netec123
-      - NAME_DB=dogs
     ports:
-      - "8082:8082"
+      - 8082:8082
     depends_on:
       mysqlserver:
         condition: service_healthy
