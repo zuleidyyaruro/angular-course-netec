@@ -1,9 +1,19 @@
 .full-width {
     width: 100%;
     margin-bottom: 16px;
+    
 }
 
 mat-card {
     height: 90%;
     padding: 100px;
+}
+
+.fullscreen-card {
+    height: calc(100vh - 64px - 44px);
+}
+
+.card-title {
+    color:aliceblue;
+    margin-bottom: 10px;
 }

@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   height: calc(100vh - 64px - 44px);
-  background-color: #EAEFEF;
 }
 
 .card-title {
@@ -14,12 +13,10 @@
 
 .card-body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #222;
   font-size: 20px;
 }
 
 .card-body--highlight {
-  color: #222;
   font-weight: bold;
   font-style: italic;
   margin-top: 20px;

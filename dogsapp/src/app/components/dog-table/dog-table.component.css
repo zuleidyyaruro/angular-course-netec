@@ -6,7 +6,6 @@
 }
 
 .cardbody {
-    color: aliceblue;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 30px;
     overflow: auto;
@@ -16,7 +15,6 @@
     display: flex;
     justify-content: center;
     height: calc(100vh - 64px - 44px);
-    background-color: #EAEFEF;
 }
 
 

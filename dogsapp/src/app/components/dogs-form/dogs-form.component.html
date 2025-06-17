@@ -1,18 +1,24 @@
 <mat-card class="fullscreen-card" appearance="outlined">
 
     <mat-card-header>
-        <mat-card-title class="card-title">Regustro de perritos</mat-card-title>
+        <mat-card-title class="card-title">Registro de perritos</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
-        <form action="">
+        <form action="" [formGroup]="form" class="mt-2" (ngSubmit)="submit()">
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Raza</mat-label>
                 <input matInput placeholder="Ej. labrador" formControlName="breed">
             </mat-form-field>
-            <mat-form-field></mat-form-field>
-            <mat-form-field></mat-form-field>
-            <mat-form-field></mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput formControlName="description" placeholder="Describe al perro"></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Url de la imagén</mat-label>
+                <textarea matInput formControlName="urlImage" placeholder="https://..."></textarea>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Registrar</button>
         </form>
 
     </mat-card-content>
